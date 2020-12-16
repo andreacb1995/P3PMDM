@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="0dp">
+
+
+        <TextView
+            android:id="@+id/añadirEntrenamiento"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="sans-serif"
+            android:inputType="none"
+            android:text="@string/añadir_entreno"
+            android:textAlignment="center"
+            android:textColor="#020202"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.036"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/Fecha"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/Fecha"
+            android:textColor="#020202"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.205"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.118" />
+
+        <TextView
+            android:id="@+id/edFecha"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/Fecha"
+            android:inputType="none"
+            android:maxLines="1"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="#2962FF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.447"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.186" />
+
+        <TextView
+            android:id="@+id/Tiempo"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/Tiempo"
+            android:textColor="#020202"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.211"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.267" />
+
+        <EditText
+            android:id="@+id/edHoras"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:autofillHints=""
+            android:hint="@string/Horas"
+            android:inputType="number"
+            android:textColor="#2962FF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.211"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.344" />
+
+        <EditText
+            android:id="@+id/edMinutos"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:autofillHints=""
+            android:hint="@string/Minutos"
+            android:inputType="number"
+            android:textColor="#2962FF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.472"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.344" />
+
+        <EditText
+            android:id="@+id/edSegundos"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:autofillHints=""
+            android:hint="@string/Segundos"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.727"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.344" />
+
+        <TextView
+            android:id="@+id/Metros"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/Metros"
+            android:textColor="#020202"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.211"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.421" />
+
+        <EditText
+            android:id="@+id/edMetros"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/Metros"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textColor="#2962FF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.211"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.499" />
+
+        <ImageButton
+            android:id="@+id/boton_guardar"
+            android:layout_width="74dp"
+            android:layout_height="78dp"
+            android:src="@android:drawable/ic_menu_save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.952"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.943" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
