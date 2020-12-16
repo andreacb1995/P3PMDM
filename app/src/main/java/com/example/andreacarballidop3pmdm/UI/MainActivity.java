@@ -193,22 +193,22 @@ public class MainActivity extends AppCompatActivity implements AccionesEntrenami
             if (resultCode == RESULT_OK) {
 
                 String returnid = data.getStringExtra("id");
-                String returnidEntrenamientoModifico = data.getStringExtra("idEntrenamientoModifico");
+//                String returnidEntrenamientoModifico = data.getStringExtra("idEntrenamientoModifico");
 
-//                if(!returnid.equals(" ")){
-//                    Entrenamiento entrenamiento;
-//                    entrenamiento = mEntrenamientoLab.getEntrenamiento(returnid);
-//                    listaEntrenamientos.add(entrenamiento);
-//                    adapter.notifyDataSetChanged();
-//                    Toast.makeText(com.example.andreacarballidop3pmdm.UI.MainActivity.this, "Entrenamiento creado", Toast.LENGTH_SHORT).show();
-//                }
-                if (!returnidEntrenamientoModifico.equals(" ")) {
+                if(!returnid.equals(" ")){
+                    Entrenamiento entrenamiento;
+                    entrenamiento = mEntrenamientoLab.getEntrenamiento(returnid);
+                    listaEntrenamientos.add(entrenamiento);
+                    adapter.notifyDataSetChanged();
+                    Toast.makeText(com.example.andreacarballidop3pmdm.UI.MainActivity.this, "Entrenamiento creado", Toast.LENGTH_SHORT).show();
+                }
+//                if (!returnidEntrenamientoModifico.equals(" ")) {
 //                    Entrenamiento entrenamientoM = mEntrenamientoLab.getEntrenamiento(returnidEntrenamientoModifico);
 //                    mEntrenamientoLab.updateEntrenamiento(entrenamientoM);
-                    adapter.notifyDataSetChanged();
-
+//                    adapter.notifyDataSetChanged();
+//
 //                    Toast.makeText(com.example.andreacarballidop3pmdm.UI.MainActivity.this, "Entrenamiento modificado", Toast.LENGTH_SHORT).show();
-                }
+//                }
 
 
             }

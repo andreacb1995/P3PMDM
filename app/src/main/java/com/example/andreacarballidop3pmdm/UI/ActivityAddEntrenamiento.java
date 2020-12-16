@@ -33,27 +33,28 @@ public class ActivityAddEntrenamiento extends AppCompatActivity {
     private EntrenamientoLab mEntrenamientoLab;
     Entrenamiento entrenamiento;
     String fechaFormato;
-//    Date fecha;
+    //    Date fecha;
     String id;
     String horas;
     String minutos;
     String segundos;
     String metros;
+    Entrenamiento entrenamientoModifico;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entrenamiento_add);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-        id= getIntent().getStringExtra("Id");
+        mEntrenamientoLab = EntrenamientoLab.get(this);
+        id = getIntent().getStringExtra("Id");
         fechaFormato = getIntent().getStringExtra("FechaFormato");
 //        fecha = getIntent().getStringExtra("Fecha");
         horas = getIntent().getStringExtra("Horas");
         minutos = getIntent().getStringExtra("Minutos");
         segundos = getIntent().getStringExtra("Segundos");
         metros = getIntent().getStringExtra("Metros");
-
+//
         añadirEntrenamiento();
 
 
@@ -70,11 +71,10 @@ public class ActivityAddEntrenamiento extends AppCompatActivity {
         ImageButton botonguardar = findViewById(R.id.boton_guardar);
         final Calendar calendar = Calendar.getInstance();
 
-        Entrenamiento entrenamientoModifico;
         entrenamientoModifico=mEntrenamientoLab.getEntrenamiento(id);
 
-        if (entrenamientoModifico!=null) {
-           tvFecha.setText(fechaFormato);
+        if (entrenamientoModifico != null) {
+            tvFecha.setText(fechaFormato);
             editTextHoras.setText(horas);
             editTextMinutos.setText(minutos);
             editTextSegundos.setText(segundos);
@@ -171,7 +171,7 @@ public class ActivityAddEntrenamiento extends AppCompatActivity {
                     return;
                 }
 
-                if (entrenamientoModifico == null) {
+               if (entrenamientoModifico == null) {
                     entrenamiento = new Entrenamiento();
                     entrenamiento.setFecha(calendar.getTime());
                     entrenamiento.setHoras(horas);
@@ -183,26 +183,26 @@ public class ActivityAddEntrenamiento extends AppCompatActivity {
                     entrenamiento.setMinutosKm(resultadominutosporkm);
                     entrenamiento.setVelocidadmediakmporhora(velocidadmedia);
                     mEntrenamientoLab.addEntrenamiento(entrenamiento);
+                   Intent i = getIntent();
+                   i.putExtra("id", entrenamiento.getId());
+                   setResult(RESULT_OK, i);
+                   finish();
 
-
-                } else {
+                 } else {
                     float resultadominutosporkm = entrenamientoModifico.calcularMinKm(horas, minutos, segundos, metros);
                     float velocidadmedia = entrenamientoModifico.calcularVelocidadmedia(horas, minutos, segundos, metros);
                     entrenamientoModifico.modificarEntrenamiento(calendar.getTime(), horas, minutos, segundos, metros, resultadominutosporkm, velocidadmedia);
                     entrenamientoModifico.setFecha(calendar.getTime());
                     entrenamientoModifico.setHoras(horas);
                     mEntrenamientoLab.updateEntrenamiento(entrenamientoModifico);
-//                    Intent i = getIntent();
-//                    i.putExtra("idEntrenamientoModifico", entrenamientoModifico.getId());
-//                    setResult(RESULT_OK, i);
-//                    finish();
+                    Intent i = getIntent();
+                    i.putExtra("idEntrenamientoModifico", entrenamientoModifico.getId());
+                    setResult(RESULT_OK, i);
+                    finish();
 
                 }
 
-//                Intent i = getIntent();
-//                i.putExtra("id", entrenamiento.getId());
-//                setResult(RESULT_OK, i);
-//                finish();
+
             }
 
         });
